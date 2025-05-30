@@ -4,7 +4,7 @@ const API_BASE_URL = 'http://localhost:3001';
 
 export const fetchUsers = async (
   page = 1,
-  limit = 10,
+  limit = 10
 ): Promise<{
   users: User[];
   totalCount: number;
@@ -12,7 +12,7 @@ export const fetchUsers = async (
 }> => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/users?_page=${page}&_limit=${limit}`,
+      `${API_BASE_URL}/users?_page=${page}&_limit=${limit}`
     );
 
     if (!response.ok) {
@@ -31,7 +31,7 @@ export const fetchUsers = async (
 };
 
 export const createUser = async (
-  userData: CreateUserRequest,
+  userData: CreateUserRequest
 ): Promise<User> => {
   try {
     const response = await fetch(`${API_BASE_URL}/users`, {

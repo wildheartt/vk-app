@@ -54,14 +54,14 @@ describe('UserForm', () => {
 
     await waitFor(() => {
       expect(
-        screen.getByText('Имя должно содержать минимум 2 символа'),
+        screen.getByText('Имя должно содержать минимум 2 символа')
       ).toBeInTheDocument();
       expect(
-        screen.getByText('Фамилия должна содержать минимум 2 символа'),
+        screen.getByText('Фамилия должна содержать минимум 2 символа')
       ).toBeInTheDocument();
       expect(screen.getByText('Некорректный email адрес')).toBeInTheDocument();
       expect(
-        screen.getByText('Номер телефона должен содержать минимум 10 символов'),
+        screen.getByText('Номер телефона должен содержать минимум 10 символов')
       ).toBeInTheDocument();
     });
 
@@ -117,7 +117,7 @@ describe('UserForm', () => {
           firstName: 'Иван',
           lastName: 'Иванов',
           email: 'ivan@test.com',
-        }),
+        })
       );
       expect(mockRefresh).toHaveBeenCalled();
       expect(onSuccess).toHaveBeenCalled();

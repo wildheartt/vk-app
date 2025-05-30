@@ -46,7 +46,7 @@ const server = setupServer(
     return res(
       ctx.status(200),
       ctx.set('X-Total-Count', '1'),
-      ctx.json(mockUsers),
+      ctx.json(mockUsers)
     );
   }),
 
@@ -57,13 +57,13 @@ const server = setupServer(
         id: 2,
         firstName: 'Новый',
         lastName: 'Пользователь',
-      }),
+      })
     );
   }),
 
   rest.get('http://localhost:3001/users', (req, res, ctx) => {
     return res(ctx.status(500), ctx.json({ message: 'Server Error' }));
-  }),
+  })
 );
 
 beforeAll(() => server.listen());
@@ -102,11 +102,11 @@ describe('API Network Tests', () => {
       server.use(
         rest.get('http://localhost:3001/users', (req, res, ctx) => {
           return res(ctx.status(500), ctx.json({ message: 'Server Error' }));
-        }),
+        })
       );
 
       await expect(fetchUsers(1, 10)).rejects.toThrow(
-        'Ошибка загрузки пользователей',
+        'Ошибка загрузки пользователей'
       );
     });
   });
@@ -140,7 +140,7 @@ describe('API Network Tests', () => {
       server.use(
         rest.post('http://localhost:3001/users', (req, res, ctx) => {
           return res(ctx.status(400), ctx.json({ message: 'Bad Request' }));
-        }),
+        })
       );
 
       const newUser = {
@@ -161,7 +161,7 @@ describe('API Network Tests', () => {
       };
 
       await expect(createUser(newUser)).rejects.toThrow(
-        'Ошибка создания пользователя',
+        'Ошибка создания пользователя'
       );
     });
   });
@@ -185,7 +185,7 @@ describe('API Network Tests', () => {
       server.use(
         rest.get('http://localhost:3001/users', (req, res, ctx) => {
           return res(ctx.status(500), ctx.json({ message: 'Server Error' }));
-        }),
+        })
       );
 
       render(<UserTable />, { wrapper });

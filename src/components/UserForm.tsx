@@ -32,12 +32,12 @@ export const UserForm: React.FC<UserFormProps> = ({ onSuccess }) => {
   });
 
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
-    {},
+    {}
   );
 
   const handleInputChange = (
     field: keyof UserFormData,
-    value: string | number,
+    value: string | number
   ) => {
     setFormData((prev) => ({
       ...prev,

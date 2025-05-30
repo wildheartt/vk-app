@@ -51,28 +51,28 @@ describe('UserTable', () => {
     render(<UserTable />);
 
     expect(
-      screen.getByRole('columnheader', { name: 'Имя' }),
+      screen.getByRole('columnheader', { name: 'Имя' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Фамилия' }),
+      screen.getByRole('columnheader', { name: 'Фамилия' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Email' }),
+      screen.getByRole('columnheader', { name: 'Email' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Телефон' }),
+      screen.getByRole('columnheader', { name: 'Телефон' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Должность' }),
+      screen.getByRole('columnheader', { name: 'Должность' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Отдел' }),
+      screen.getByRole('columnheader', { name: 'Отдел' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Зарплата' }),
+      screen.getByRole('columnheader', { name: 'Зарплата' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('columnheader', { name: 'Опыт' }),
+      screen.getByRole('columnheader', { name: 'Опыт' })
     ).toBeInTheDocument();
   });
 
@@ -90,7 +90,7 @@ describe('UserTable', () => {
     render(<UserTable />);
 
     expect(
-      screen.getByText('Все данные загружены (1 пользователей)'),
+      screen.getByText('Все данные загружены (1 пользователей)')
     ).toBeInTheDocument();
   });
 });
